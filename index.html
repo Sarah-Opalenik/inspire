@@ -7,23 +7,46 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Inspire</title>
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 
-<body id="bg-image">
-	<div id="weather">
-		Your Weather Template
+<body class="background container-fluid" id="bg-image">
+	<!-- Weather Below -->
+	<div class="row justify-content-end">
+		<!-- Weather Template Below -->
+		<div id="weather">
+			Your Weather Template
+		</div>
 	</div>
-
-	<div id="quote">
-		The Quote
+	<!-- To-Do Below -->
+	<div class="row">
+		<div class="col-6">
+			<div class="card card-todo">
+				<h3 class="card-header">You have <span id="todo-count"></span> things to do!</h3>
+				<div class="row">
+					<div class="col">
+						<!-- Form -->
+						<form class="card-body" onsubmit="app.controllers.todoController.addTodo(event)">
+							<input type="text" name="description" placeholder="Add to your To-Do list">
+							<button type="submit" class="btn btn-info">Add Goal</button>
+						</form>
+					</div>
+				</div>
+				<!-- To-Do Template -->
+				<ul>
+					<div id="todos"></div>
+				</ul>
+			</div>
+		</div>
 	</div>
-
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit=""></form>
-		<div id="todos"></div>
-	</div>
+	<footer class="bottom">
+		<div class="row">
+			<div id="quote">
+				The Quote
+			</div>
+		</div>
+	</footer>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>
